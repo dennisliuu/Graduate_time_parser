@@ -1,5 +1,17 @@
 # University System of Taiwan Graduate_time parser
 
+## Start project
+
+```python=
+python3 -m venv py-env
+
+source py-env/source/active
+
+python install -r requirements.txt
+
+python main.py
+```
+
 2020-11-13 : fix some link bug
 
 2018-8-23 update: 支援顯示口試日期
