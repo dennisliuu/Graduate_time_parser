@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "eslint-config-prettier": "^8.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
