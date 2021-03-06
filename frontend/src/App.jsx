@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import "musubii/dist/musubii.min.css";
+
+import SearchForm from "./components/SearchForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -8,16 +11,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <h2>畢業年限查詢系統</h2>
+        {/* <button onClick={() => setCount((count) => count + 1)}>
             count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
+          </button> */}
+        <SearchForm />
+        <button
+          className="button is-plain is-primary is-sm is-margin-top-xxl"
+          type="button"
+        >
+          探す！
+        </button>
+
+        <p className="is-margin-top-xxl">Good luck!</p>
         <p>
           <a
             className="App-link"
@@ -30,11 +37,11 @@ function App() {
           {" | "}
           <a
             className="App-link"
-            href="https://vitejs.dev/guide/features.html"
+            href="https://github.com/dennisliuu"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vite Docs
+            View Github
           </a>
         </p>
       </header>
