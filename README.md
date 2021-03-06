@@ -2,6 +2,8 @@
 
 ## Start project
 
+爬蟲：
+
 ```python=
 python3 -m venv py-env
 
@@ -11,6 +13,12 @@ python install -r requirements.txt
 
 python main.py
 ```
+
+Frontend: frontend/
+
+Backend: backend/
+
+---
 
 2020-11-13 : fix some link bug
 
