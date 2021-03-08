@@ -5,7 +5,6 @@ const ProfessorType = new GraphQLObjectType({
   name: "Professor",
   fields: () => ({
     id: { type: GraphQLInt },
-    firstName: { type: GraphQLString },
     School: { type: GraphQLString },
     Name: { type: GraphQLString},
     Graduated_student: { type: GraphQLInt },

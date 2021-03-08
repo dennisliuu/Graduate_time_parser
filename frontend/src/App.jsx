@@ -4,6 +4,7 @@ import "./App.css";
 import "musubii/dist/musubii.min.css";
 
 import SearchForm from "./components/SearchForm";
+import ShowResult from "./components/ShowResult";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +17,8 @@ function App() {
         {/* <button onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button> */}
-        <SearchForm />
+        {/* <SearchForm /> */}
+        <ShowResult />
         <button
           className="button is-plain is-primary is-sm is-margin-top-xxl"
           type="button"
