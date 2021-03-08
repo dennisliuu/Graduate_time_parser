@@ -4,6 +4,7 @@ import "musubii/dist/musubii.min.css";
 
 import SearchForm from "./components/SearchForm";
 import ShowResult from "./components/ShowResult";
+import Leaderboard from "./components/Leaderboard";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +19,8 @@ function App() {
             count is: {count}
           </button> */}
         {/* <SearchForm /> */}
-        <ShowResult />
+        {/* <ShowResult /> */}
+        <Leaderboard />
 
         <p className="is-margin-top-xxl">僅供參考</p>
         <p>
