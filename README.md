@@ -1,4 +1,4 @@
-# University System of Taiwan Graduate_time parser
+# 查詢台聯大教授歷史畢業年限
 
 ![](https://i.imgur.com/Oum42Mr.png)
 
