@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "musubii/dist/musubii.min.css";
 
@@ -13,20 +12,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h2>畢業年限查詢系統</h2>
+
+        <h2 className="text is-info is-weight-600 is-line-height-xxl">畢業年限查詢系統</h2>
         {/* <button onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button> */}
         {/* <SearchForm /> */}
         <ShowResult />
-        <button
-          className="button is-plain is-primary is-sm is-margin-top-xxl"
-          type="button"
-        >
-          探す！
-        </button>
 
-        <p className="is-margin-top-xxl">Good luck!</p>
+        <p className="is-margin-top-xxl">僅供參考</p>
         <p>
           <a
             className="App-link"

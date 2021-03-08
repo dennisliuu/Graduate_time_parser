@@ -27,6 +27,12 @@ const SearchForm = () => {
         name="text"
         placeholder="教授名稱"
       />
+      <button
+        className="button is-plain is-primary is-sm is-margin-top-xxl"
+        type="button"
+      >
+        探す！
+      </button>
     </>
   );
 };
