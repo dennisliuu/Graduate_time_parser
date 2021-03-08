@@ -1,8 +1,8 @@
 const graphql = require("graphql");
 const { GraphQLObjectType, GraphQLInt, GraphQLString } = graphql;
 
-const UserType = new GraphQLObjectType({
-  name: "User",
+const ProfessorType = new GraphQLObjectType({
+  name: "Professor",
   fields: () => ({
     id: { type: GraphQLInt },
     firstName: { type: GraphQLString },
@@ -17,4 +17,4 @@ const UserType = new GraphQLObjectType({
   }),
 });
 
-module.exports = UserType;
+module.exports = ProfessorType;
