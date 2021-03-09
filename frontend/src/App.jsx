@@ -2,9 +2,36 @@ import React, { useState } from "react";
 import "./App.css";
 import "musubii/dist/musubii.min.css";
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+
 import SearchForm from "./components/SearchForm";
 import ShowResult from "./components/ShowResult";
 import Leaderboard from "./components/Leaderboard";
+
+const errorLink = onError(({ graphqlErrors, networkError }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`);
+    });
+  }
+});
+
+const link = from([
+  errorLink,
+  new HttpLink({ uri: "http://localhost:6969/graphql" }),
+]);
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: link,
+});
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,13 +41,17 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
-        <h2 className="text is-info is-weight-600 is-line-height-xxl">畢業年限查詢系統</h2>
+        <h2 className="text is-info is-weight-600 is-line-height-xxl">
+          畢業年限查詢系統
+        </h2>
         {/* <button onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button> */}
-        {/* <SearchForm /> */}
-        {/* <ShowResult /> */}
-        <Leaderboard />
+        <ApolloProvider client={client}>
+          {/* <SearchForm /> */}
+          {/* <ShowResult /> */}
+          <Leaderboard />
+        </ApolloProvider>
 
         <p className="is-margin-top-xxl">僅供參考</p>
         <p>
