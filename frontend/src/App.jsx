@@ -44,7 +44,7 @@ function App() {
         </h2>
         <ApolloProvider client={client}>
           <SearchForm school={school} />
-          <ShowResult />
+          <ShowResult Name={"XXX"} School={"NTHU"}/>
           <Leaderboard />
         </ApolloProvider>
 

@@ -1,0 +1,24 @@
+{
+  "Professor": [{
+    "id": 1,
+    "School": "NTHU",
+    "Name": "XXX",
+    "Graduated_student": "5",
+    "Y1": "1",
+    "Y2": "1",
+    "Y2_3": "1",
+    "Y3_4": "1",
+    "Y4_beyond": "1"
+  },
+  {
+    "id": 2,
+    "School": "NTHU",
+    "Name": "ABC",
+    "Graduated_student": "10",
+    "Y1": "2",
+    "Y2": "2",
+    "Y2_3": "2",
+    "Y3_4": "2",
+    "Y4_beyond": "2"
+  }]
+}
