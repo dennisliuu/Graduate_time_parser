@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-const SearchForm = () => {
-  const school = ["NCTU", "NTHU", "NYMU", "NCU"];
-  let lists = [];
+const SearchForm = ({ school }) => {
+  let lists = []
   school.map((s) => {
     lists.push(
       <div className="box" key={s}>

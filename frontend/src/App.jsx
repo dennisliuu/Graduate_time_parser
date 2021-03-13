@@ -33,6 +33,8 @@ const client = new ApolloClient({
   link: link,
 });
 
+const school = ["NCTU", "NTHU", "NYMU", "NCU"];
+
 function App() {
   return (
     <div className="App">
@@ -41,7 +43,7 @@ function App() {
           畢業年限查詢系統
         </h2>
         <ApolloProvider client={client}>
-          <SearchForm />
+          <SearchForm school={school} />
           <ShowResult />
           <Leaderboard />
         </ApolloProvider>
