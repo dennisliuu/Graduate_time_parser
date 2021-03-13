@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { LOAD_USERS } from "../GraphQL/Queries";
 
-const ShowResult = ({ Name, School }) => {
+const ShowResult = ({ Professor }) => {
   const { error, loading, data } = useQuery(LOAD_USERS);
   const [professors, setProfessors] = useState([]);
 
@@ -10,7 +10,9 @@ const ShowResult = ({ Name, School }) => {
     if (data) {
       setProfessors(
         data.getAllProfessors.filter(
-          (professor) => professor.Name == Name && professor.School == School
+          (professor) =>
+            professor.Name == Professor.Name &&
+            professor.School == Professor.School
         )
       );
     }

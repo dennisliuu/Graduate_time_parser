@@ -36,6 +36,8 @@ const client = new ApolloClient({
 const school = ["NCTU", "NTHU", "NYMU", "NCU"];
 
 function App() {
+  const [Professor, setProfessor] = useState({ Name: "XXX", School: "NTHU" });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,7 +46,7 @@ function App() {
         </h2>
         <ApolloProvider client={client}>
           <SearchForm school={school} />
-          <ShowResult Name={"XXX"} School={"NTHU"}/>
+          <ShowResult Professor={Professor} />
           <Leaderboard />
         </ApolloProvider>
 
