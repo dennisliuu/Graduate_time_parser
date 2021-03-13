@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { LOAD_USERS } from "../GraphQL/Queries";
 
-const ShowResult = () => {
+const ShowResult = ({ Name, School }) => {
   const { error, loading, data } = useQuery(LOAD_USERS);
   const [professors, setProfessors] = useState([]);
 
   useEffect(() => {
-    if (data) setProfessors(data.getAllProfessors);
+    if (data) {
+      setProfessors(
+        data.getAllProfessors.filter(
+          (professor) => professor.Name == Name && professor.School == School
+        )
+      );
+    }
   }, [data]);
 
   return (
