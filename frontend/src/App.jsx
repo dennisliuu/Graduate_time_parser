@@ -34,22 +34,15 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-
         <h2 className="text is-info is-weight-600 is-line-height-xxl">
           畢業年限查詢系統
         </h2>
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button> */}
         <ApolloProvider client={client}>
-          {/* <SearchForm /> */}
-          {/* <ShowResult /> */}
+          <SearchForm />
+          <ShowResult />
           <Leaderboard />
         </ApolloProvider>
 

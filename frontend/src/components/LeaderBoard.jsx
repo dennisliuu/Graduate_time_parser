@@ -5,9 +5,11 @@ import { LOAD_USERS } from "../GraphQL/Queries";
 const LeaderBoard = () => {
   const { error, loading, data } = useQuery(LOAD_USERS);
   const [professors, setProfessors] = useState([]);
+
   useEffect(() => {
     if (data) setProfessors(data.getAllProfessors);
   }, [data]);
+  
   return (
     <>
       <h1 className="text is-warning">排行榜</h1>
