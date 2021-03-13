@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
-import "musubii/dist/musubii.min.css";
-
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,6 +7,9 @@ import {
   from,
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
+
+import "./App.css";
+import "musubii/dist/musubii.min.css";
 
 import SearchForm from "./components/SearchForm";
 import ShowResult from "./components/ShowResult";

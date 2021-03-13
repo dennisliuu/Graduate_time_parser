@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { LOAD_USERS } from "../GraphQL/Queries";
 
 const ShowResult = ({ Name, School }) => {
@@ -17,7 +17,7 @@ const ShowResult = ({ Name, School }) => {
   }, [data]);
 
   return (
-    <div className="card is-floating is-zoom">
+    <div className="card is-floating is-zoom is-outline">
       <div className="box is-padding-md">
         {professors.map((val) => {
           return (

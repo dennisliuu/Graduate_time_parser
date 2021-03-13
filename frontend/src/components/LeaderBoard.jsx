@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { LOAD_USERS } from "../GraphQL/Queries";
 
 const LeaderBoard = () => {
