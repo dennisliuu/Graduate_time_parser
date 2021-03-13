@@ -3,21 +3,17 @@ import React, { useState } from "react";
 const SearchForm = () => {
   const school = ["NCTU", "NTHU", "NYMU", "NCU"];
   let lists = [];
-  for (let i = 0; i <= school.length - 1; i++)
+  school.map((s) => {
     lists.push(
-      <div className="box" key={school[i]}>
-        <input
-          className="input"
-          id={school[i]}
-          type="radio"
-          name="school_radio"
-        />
-        <label className="label is-middle" htmlFor={school[i]}>
+      <div className="box" key={s}>
+        <input className="input" id={s} type="radio" name="school_radio" />
+        <label className="label is-middle" htmlFor={s}>
           <span className="radio is-margin-right-xxs"></span>
-          <span className="text">{school[i]}</span>
+          <span className="text">{s}</span>
         </label>
       </div>
     );
+  });
   return (
     <>
       <div className="box is-flex is-space-right-md">{lists}</div>
