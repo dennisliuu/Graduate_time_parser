@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ShowResult from "./ShowResult";
 
 const SearchForm = ({ school }) => {
-  let lists = []
+  const [Professor, setProfessor] = useState({ Name: "AAA", School: "NTHU" });
+
+  let lists = [];
   school.map((s) => {
     lists.push(
       <div className="box" key={s}>
@@ -13,6 +16,7 @@ const SearchForm = ({ school }) => {
       </div>
     );
   });
+
   return (
     <>
       <div className="box is-flex is-space-right-md">{lists}</div>
@@ -28,6 +32,7 @@ const SearchForm = ({ school }) => {
       >
         探す！
       </button>
+      <ShowResult Professor={Professor} />
     </>
   );
 };
