@@ -16,7 +16,7 @@ const SearchForm = ({ schools }) => {
       setProfessor(
         data.getAllProfessors.filter(
           (professor) =>
-            professor.Name == search.Name || professor.School == search.School
+            professor.Name == search.Name && professor.School == search.School
         )
       );
     }
@@ -32,7 +32,9 @@ const SearchForm = ({ schools }) => {
           type="radio"
           name="school_radio"
           value={school}
-          onChange={(e) => setSearch({ School: e.currentTarget.value })}
+          onChange={(e) =>
+            setSearch({ Name: search.Name, School: e.currentTarget.value })
+          }
         />
         <label className="label is-middle" htmlFor={school}>
           <span className="radio is-margin-right-xxs"></span>
@@ -51,7 +53,9 @@ const SearchForm = ({ schools }) => {
         name="name"
         placeholder="教授名稱"
         value={search.Name}
-        onChange={(e) => setSearch({ Name: e.target.value })}
+        onChange={(e) =>
+          setSearch({ Name: e.target.value, School: search.School })
+        }
       />
       <button
         className="button is-plain is-primary is-sm is-margin-top-xxl"
