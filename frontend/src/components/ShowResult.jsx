@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { LOAD_USERS } from "../GraphQL/Queries";
+import React from "react";
 
-const ShowResult = ({ Professor }) => {
-  const { error, loading, data } = useQuery(LOAD_USERS);
-  const [professors, setProfessors] = useState([]);
-
-  useEffect(() => {
-    if (data) {
-      setProfessors(
-        data.getAllProfessors.filter(
-          (professor) =>
-            professor.Name == Professor.Name &&
-            professor.School == Professor.School
-        )
-      );
-    }
-  }, [data]);
-
+const ShowResult = ({ professor }) => {
   return (
     <div className="card is-floating is-zoom is-outline">
       <div className="box is-padding-md">
-        {professors.map((val) => {
+        {professor.map((val) => {
           return (
             <div key={val.id}>
               <h1>Name: {val.Name} </h1>
