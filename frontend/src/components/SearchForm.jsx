@@ -7,6 +7,7 @@ const SearchForm = ({ schools }) => {
     Name: "",
     School: "",
   });
+  const [open, setOpen] = useState(false);
 
   let lists = [];
   schools.map((school) => {
@@ -82,11 +83,12 @@ const SearchForm = ({ schools }) => {
             Y3_4: res.Y3_4,
             Y4_beyond: res.Y4_beyond,
           });
+          setOpen(true);
         }}
       >
         探す！
       </button>
-      <ShowResult professor={professor} />
+      {open ? <ShowResult professor={professor} /> : ""}
     </>
   );
 };

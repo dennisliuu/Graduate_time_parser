@@ -1,8 +1,6 @@
 # 台聯大教授畢業年限實價登錄
 
-![](https://i.imgur.com/Oum42Mr.png)
-
-![](https://i.imgur.com/qFFsc6Q.png)
+![](demo.gif)
 
 ## Start project
 
