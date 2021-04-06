@@ -13,17 +13,7 @@ def main(School, Name, Student=10):
     if len(prev_search) > 0:
         return prev_search[0]
 
-    # # 使用 sys.argv 以利將查詢資料直接帶入查詢，並取消手動打字
-    # Input_search = sys.argv
-
     # # 欲查詢學校[1.交大 2.中央 3.清大 4.陽明]
-    # School = sys.argv[1]
-
-    # # 教授名稱
-    # Name = sys.argv[2]
-
-    # # 參考最近碩士畢業生的數量：
-    # Student = int(sys.argv[3])
 
     # 系所過濾
     # Filter_Count = input('欲過濾的系所數量（選填）：')

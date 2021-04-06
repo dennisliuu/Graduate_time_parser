@@ -1,8 +1,8 @@
 import mechanicalsoup
 
 # data用來紀錄學生姓名、L串列紀錄各畢業時間的入學年與口試日期
-data={}
-L1, L2, L2_3, L3_4, L4_beyond = ([],[],[],[],[])
+data = {}
+L1, L2, L2_3, L3_4, L4_beyond = ([], [], [], [], [])
 
 
 def show(Name, Student, Y1, Y2, Y2_3, Y3_4, Y4_beyond):
@@ -18,7 +18,7 @@ def show(Name, Student, Y1, Y2, Y2_3, Y3_4, Y4_beyond):
     browser["qs0"] = Name
     browser["dcf"] = "ad"
     browser.submit_selected()
-    
+
     # 紀錄網址中的ccd項
     ccd = browser.get_url()
     ccd = ccd[52:58:]
@@ -32,22 +32,24 @@ def show(Name, Student, Y1, Y2, Y2_3, Y3_4, Y4_beyond):
     enter = "/cgi-bin/gs32/gsweb.cgi/ccd=" + ccd + "/record"
     browser.follow_link(enter.strip())
     now = browser.get_url()
-    
+
     # 迴圈控制變數宣告
     i = 0
 
     # 利用迴圈依序進入每一筆資料
-    while  i < Student:
+    while i < Student:
         i += 1
         now = now[:69] + str(i)
         browser.open(now.strip())
         access = browser.get_current_page()
 
         # 取得學生名字，若學生名字存在data字典中，嘗試取得口試日期
-        student_name = access.body.form.div.table.tbody.tr.td.table.find("th",text="研究生:").find_next_sibling().get_text()
+        student_name = access.body.form.div.table.tbody.tr.td.table.find(
+            "th", text="研究生:").find_next_sibling().get_text()
         if student_name in data:
             try:
-                oral_defense = access.body.form.div.table.tbody.tr.td.table.find("th",text="口試日期:").find_next_sibling().get_text()
+                oral_defense = access.body.form.div.table.tbody.tr.td.table.find(
+                    "th", text="口試日期:").find_next_sibling().get_text()
                 # 於data的對應key中加入口試日期，並將入學年以西元年表示，轉成string
                 data[student_name].append(oral_defense)
                 data[student_name][0] += 1911
@@ -55,21 +57,20 @@ def show(Name, Student, Y1, Y2, Y2_3, Y3_4, Y4_beyond):
 
                 # 依照value中的畢業時間資訊分類至對應的L串列中
                 if data[student_name][1] == "1":
-                    L1.append([data[student_name][0],data[student_name][2]])
+                    L1.append([data[student_name][0], data[student_name][2]])
                 elif data[student_name][1] == "2":
-                    L2.append([data[student_name][0],data[student_name][2]])
+                    L2.append([data[student_name][0], data[student_name][2]])
                 elif data[student_name][1] == "2_3":
-                    L2_3.append([data[student_name][0],data[student_name][2]])
+                    L2_3.append([data[student_name][0], data[student_name][2]])
                 elif data[student_name][1] == "3_4":
-                    L3_4.append([data[student_name][0],data[student_name][2]])
+                    L3_4.append([data[student_name][0], data[student_name][2]])
                 elif data[student_name][1] == "4_beyond":
-                    L4_beyond.append([data[student_name][0],data[student_name][2]])
+                    L4_beyond.append(
+                        [data[student_name][0], data[student_name][2]])
 
             # 若口試日期取得失敗，繼續迴圈
             except AttributeError:
                 continue
-
-
 
     # 輸出結果
     print("天才一年畢業的", Y1, "位學生中：")
