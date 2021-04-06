@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { LOAD_USERS } from "../GraphQL/Queries";
 
 const LeaderBoard = () => {
   const { error, loading, data } = useQuery(LOAD_USERS);
